@@ -16,7 +16,7 @@ var mypageRouter = require('./routes/mypage');
 var managementRouter = require('./routes/management');
 var orderRouter = require('./routes/order');
 var reviewRouter = require('./routes/review');
-
+var testRouter = require('./routes/test');
 var app = express();
 
 // view engine setup
@@ -41,7 +41,7 @@ app.use('/mypage', mypageRouter);
 app.use('/management', managementRouter);
 app.use('/order', orderRouter);
 app.use('/review', reviewRouter);
-
+app.use('/test', testRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
