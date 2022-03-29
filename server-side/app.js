@@ -17,8 +17,12 @@ var managementRouter = require('./routes/management');
 var orderRouter = require('./routes/order');
 var reviewRouter = require('./routes/review');
 var testRouter = require('./routes/test');
+var { sequelize } = require('./models');
+const tokenRouter = require('./routes/token');
+
 var app = express();
 
+sequelize.sync();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -42,7 +46,7 @@ app.use('/management', managementRouter);
 app.use('/order', orderRouter);
 app.use('/review', reviewRouter);
 app.use('/test', testRouter);
-
+app.use('/token', tokenRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
