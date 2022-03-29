@@ -24,3 +24,7 @@ yarn-error.log*
 
 # pts
 test.rest
+
+# jwt
+config/jwt.js 
+.env
