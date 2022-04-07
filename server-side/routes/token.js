@@ -16,14 +16,17 @@ router.post('/', async (req, res) => {
             createat : user.create_at,
         }
         // jwt.sign() 메소드: 토큰 발급
-        const token = jwt.sign(userInfo , process.env.JWT_SECRET, {
-            expiresIn: '5m', // 5분
-            issuer: '토큰발급자',
+        const Acess_token = jwt.sign(userInfo , process.env.ACCESS_JWT_SECRET, {
+            expiresIn: '1m', // 5분
+        });
+        const Refresh_token = jwt.sign(userInfo , process.env.REFRESH_JWT_SECRET, {
+            expiresIn: '180m', // 5분
         });
         return res.json({
             code: 200,
             message: '토큰이 발급되었습니다.',
-            token,
+            Acess_token,
+            Refresh_token,
         });
     }
 
@@ -38,7 +41,7 @@ router.post('/', async (req, res) => {
 
 // 발급된 토큰을 테스트하는 라우터
 router.get('/test', verifyToken, (req, res) => {
-  return res.json(req.decoded);
+    return res.json(req.decoded);
 });
 
 module.exports = router;
