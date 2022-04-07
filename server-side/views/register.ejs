@@ -67,19 +67,16 @@
                         <option value="admin">관리자</option>
                     </select>
                     <label>Email</label>
-                    <input type="email" id="email" name="email" class="form-control" required/>
+                    <input type="email" id="userEmail" name="userEmail" class="form-control" required/>
                     
-                    <label>Name</label>
-                    <input type="text" id="name" name="name" class="form-control" required/>
-
-                    <label>Phone</label>
-                    <input type="tel" id="phone" name="phone" class="form-control" placeholder="010-xxxx-xxxx" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" required/>
-
-                    <label>Address</label>
-                    <input type="text" id="address" name="address" class="form-control" />
+                    <label>NickName</label>
+                    <input type="string" id="nickname" name="nickname" class="form-control" required/>
 
                     <label>Password</label>
                     <input type="password" id="password" name="password" class="form-control" />
+                    
+                    <label>PasswordCheck</label>
+                    <input type="password" id="passwordCheck" name="passwordCheck" class="form-control" />
                 </div>
                 <div>
                     <input type="submit" class="btn btn-primary" value="Sign Up"></button>
